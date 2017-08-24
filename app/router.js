@@ -1,3 +1,4 @@
+'use strict';
 import Ember from 'ember';
 import config from './config/environment';
 
@@ -7,6 +8,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('pokemon', function() {
+    this.route('pokemon-id', {
+      path: ':slug'
+    });
+  });
 });
 
 export default Router;

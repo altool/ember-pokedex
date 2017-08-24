@@ -1,0 +1,19 @@
+<p>
+  {{ model.name }}
+</p>
+
+<img src="{{model.sprites.front_default}}" alt="Front sprite for {{ model.name }}">
+
+<img src="{{model.sprites.front_shiny}}" alt="Front shiny sprite for {{ model.name }}">
+
+<ul>
+  {{#each model.types as |type|}}
+    <li>
+      {{ type.type.name }}
+    </li>
+  {{/each}}
+</ul>
+
+
+
+{{outlet}}
