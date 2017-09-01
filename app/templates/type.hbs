@@ -1,0 +1,15 @@
+<h2>
+  Types
+</h2>
+
+<ul>
+{{#each model as |type|}}
+  <li>
+    {{#link-to 'type.type-id' type}}
+      {{ type }}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}

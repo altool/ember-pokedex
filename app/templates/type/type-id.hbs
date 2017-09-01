@@ -1,0 +1,20 @@
+
+<div class="flex-100">
+  {{#paper-list class="list-flex-layout__container"}}
+    {{#paper-subheader}}
+      <h2>
+        {{model.name}}
+      </h2>
+    {{/paper-subheader}}
+    {{#each model.pokemon as |pokemon|}}
+      {{#link-to 'pokemon.pokemon-id' pokemon.pokemon.name class="list-flex-layout__item"}}
+        {{#paper-item class="md-2-line"}}
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon-id pokemon.pokemon.url}}.png" alt="" class="md-avatar">
+          <div class="md-list-item-text">
+            <h3>{{pokemon.pokemon.name}}</h3>
+          </div>
+        {{/paper-item}}  
+      {{/link-to}}
+    {{/each}}
+  {{/paper-list}}
+</div>

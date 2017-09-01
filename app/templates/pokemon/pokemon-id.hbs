@@ -1,19 +1,97 @@
-<p>
-  {{ model.name }}
-</p>
+<div class="flex-100">
+  <p>
+    #{{model.base.id}}: {{ model.base.name }}
+  </p>
+</div>
 
-<img src="{{model.sprites.front_default}}" alt="Front sprite for {{ model.name }}">
+<div class="flex-100">
+  <img src="{{model.base.sprites.front_default}}" alt="Front sprite for {{ model.base.name }}">
 
-<img src="{{model.sprites.front_shiny}}" alt="Front shiny sprite for {{ model.name }}">
+  {{#if model.base.sprites.front_shiny}}
+    <img src="{{model.base.sprites.front_shiny}}" alt="Front shiny sprite for {{ model.base.name }}">
+  {{/if}}
+</div>
 
-<ul>
-  {{#each model.types as |type|}}
+<div class="flex-100">
+  <ul>
+    {{#each model.base.types as |type|}}
+      <li>
+        {{#link-to "type.type-id" type.type.name}}
+          {{ type.type.name }}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="flex-100">
+  <ul>
+    {{#each model.base.abilities as |ability| }}
+      {{#link-to "ability.ability_id" ability.ability.name}}
+        <li>
+          {{ ability.ability.name }} - {{ ability.is_hidden }}
+        </li>
+      {{/link-to}}
+    {{/each}}
+  </ul>
+</div>
+
+<div class="flex-100">
+  <h5>
+    Color: {{#link-to 'pokemon_color.pokemon_color_id' model.species.color.name}}
+      {{ model.species.color.name }}
+    {{/link-to}}
+  </h5>
+</div>
+
+<div class="flex-100">
+  <ul>
     <li>
-      {{ type.type.name }}
+      {{#link-to "pokemon.pokemon-id.species-info" model.base.id}}
+        Species Info
+      {{/link-to}}
     </li>
-  {{/each}}
-</ul>
+    <li>
+      {{#link-to "pokemon.pokemon-id.moves" model.base.id}}
+        Moves
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "pokemon.pokemon-id.pokedex" model.base.id}}
+        Pokedex
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "pokemon.pokemon-id.stats" model.base.id}}
+        Stats
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "pokemon.pokemon-id.tms" model.base.id}}
+        TMs
+      {{/link-to}}
+    </li>
+  </ul>
+</div>
 
+<div class="flex-100">
+  {{#paper-list}}
+    {{#link-to "pokemon.pokemon-id" model.base.prev_id}}
+      {{#paper-item class="md-2-line"}}
+        <img src={{sprite model.base.prev_id}} class="md-avatar">
+        <div class="md-list-item-text">
+          <h3>Previous Pokemon</h3>
+        </div>
+      {{/paper-item}}
+    {{/link-to}}
 
-
-{{outlet}}
+    {{#link-to "pokemon.pokemon-id" model.base.next_id}}
+      {{#paper-item class="md-2-line"}}
+        <img src={{sprite model.base.next_id}} class="md-avatar">
+        <div class="md-list-item-text">
+          <h3>Next Pokemon</h3>
+        </div>
+      {{/paper-item}}
+    {{/link-to}}
+  {{/paper-list}}
+</div>

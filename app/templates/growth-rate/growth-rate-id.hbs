@@ -1,0 +1,15 @@
+<h5>
+  {{ model.name }}
+</h5>
+
+<ul>
+  {{#each model.pokemon_species as |pokemon|}}
+    <li>
+      {{#link-to 'pokemon.pokemon-id' pokemon.name}}
+        {{ pokemon.name }}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

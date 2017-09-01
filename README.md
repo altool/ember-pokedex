@@ -1,3 +1,5 @@
+ember g route type/type-id --path=':slug'
+
 # ember-pokedex
 
 This README outlines the details of collaborating on this Ember application.

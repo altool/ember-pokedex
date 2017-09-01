@@ -1,1 +1,30 @@
-{{outlet}}
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left2"
+    open=leftSideBarOpen2
+    lockedOpen=leftSideBarLockedOpen
+    onToggle=(action (mut leftSideBarOpen2))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}
+        EmberDex
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      Abilities
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-card-content class="flex"}}
+    {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
+      {{if leftSideBarLockedOpen "Unlock" "Lock"}}
+    {{/paper-button}}
+
+    <div class="epd-l-main__content layout-fill layout-row layout-wrap flex">
+      {{outlet}}
+    </div>
+  {{/paper-card-content}}
+
+{{/paper-sidenav-container}}
+

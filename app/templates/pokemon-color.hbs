@@ -1,0 +1,17 @@
+<h3>
+  Colors!
+</h3>
+
+{{ model.count }}
+
+<ul>
+{{#each model as |color|}}
+  <li>
+    {{#link-to "pokemon_color.pokemon_color_id" color}}
+      {{ color }}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}
