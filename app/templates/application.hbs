@@ -1,28 +1,45 @@
-{{#paper-sidenav-container class="inner-sidenav epd-l-main__sidenav"}}
+{{#paper-sidenav-container class="inner-sidenav"}}
 
   {{#paper-sidenav
-    class="md-whiteframe-z2"
+    class="md-whiteframe-z2 md-sidenav-left epd-l-main__sidenav"
     name="left2"
-    open=leftSideBarOpen2
-    lockedOpen=leftSideBarLockedOpen
-    onToggle=(action (mut leftSideBarOpen2))}}
-    {{#paper-toolbar as |toolbar|}}
-      {{#paper-toolbar-tools}}
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-toolbar accent=true tall=true class="epd-l-main__sidenav-header"}}
+      <span class="flex"></span>
+      <h1>
         EmberDex
-      {{/paper-toolbar-tools}}
+      </h1>
     {{/paper-toolbar}}
-    {{#paper-content padding=true}}
-      Abilities
-    {{/paper-content}}
+    {{#link-to "type"}}
+      {{#paper-content padding=true}}
+        Types
+      {{/paper-content}}
+    {{/link-to}}
+    {{#link-to "pokemon_color"}}
+      {{#paper-content padding=true}}
+        Colors
+      {{/paper-content}}
+    {{/link-to}}
+    {{#link-to "pokemon_shape"}}
+      {{#paper-content padding=true}}
+        Shapes
+      {{/paper-content}}
+    {{/link-to}}
   {{/paper-sidenav}}
 
   {{#paper-card-content class="flex"}}
     <div class="epd-l-main__content">
-      <div class="epd-l-main__header">
-        {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
-          {{if leftSideBarLockedOpen "Unlock" "Lock"}}
-        {{/paper-button}}
-      </div>
+      {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          {{#paper-button iconButton=true onClick=(action "toggle" "leftSideBarOpen") class="epd-l-main__sidenav-toggle"}}
+            {{paper-icon "menu"}}
+          {{/paper-button}}
+          <h2>
+            Toolbar with Icon Buttons
+          </h2>
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
 
       <div class="epd-l-main__body">
         {{outlet}}

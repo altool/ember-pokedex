@@ -2,7 +2,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  leftSideBarLockedOpen: true,
+  leftSideBarOpen: false,
+  leftSideBarLockedOpen: false,
 
   actions: {
     toggle(value) {

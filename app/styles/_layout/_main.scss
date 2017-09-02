@@ -1,14 +1,20 @@
 .epd-l-main__container { min-height: 100vh; }
 
+.epd-l-main__sidenav { box-shadow: container(box-shadow, 2); }
+
+.epd-l-main__sidenav-toggle {
+  @include larger-than(lg) { display: none; }
+}
+
+.epd-l-main__sidenav-header { padding-left: rem(17px); }
+
 .epd-l-main__content {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-.epd-l-main__header { flex: 0 1 auto; }
-
 .epd-l-main__body {
-  padding: 0 spacing(half);
+  padding: spacing(half) spacing();
   flex: 1 1 auto;
 }

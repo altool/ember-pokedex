@@ -1,0 +1,17 @@
+.epd-l-pokemon__tabs {
+  display: grid;
+  margin-top: spacing(quart);
+  grid-gap: spacing();
+  grid-template-columns: 1fr;
+
+  @include larger-than(sm) { grid-template-columns: repeat(5, 1fr); }
+}
+
+.epd-l-pokemon__tabLink {}
+
+.epd-l-pokemon__tabButton {
+  margin: 0;
+  width: 100%;
+
+  .active > & { @include contra-color($primary); }
+}
