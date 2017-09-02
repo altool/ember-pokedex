@@ -2,14 +2,13 @@
   Colors!
 </h3>
 
-<ul>
 {{#each model as |color|}}
-  <li>
-    {{#link-to "pokemon_color.pokemon_color_id" color}}
-      {{ color }}
-    {{/link-to}}
-  </li>
+  {{#link-to "pokemon_color.pokemon_color_id" color}}
+    {{color-chip
+      chipText=color
+      color=color
+    }}
+  {{/link-to}}
 {{/each}}
-</ul>
 
 {{outlet}}

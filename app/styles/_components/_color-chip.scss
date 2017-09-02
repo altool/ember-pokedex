@@ -1,0 +1,23 @@
+.epd-c-colorChip {
+  padding: 0.25em 0.5em 0.25rem 0.55rem;
+  margin: spacing(quart) spacing(half);
+
+  border-radius: spacing(third);
+  box-shadow: container(box-shadow, 1);
+
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  .active > & {
+    font-weight: bold;
+
+    box-shadow: container(box-shadow, 2);
+  }
+}
+
+@each $name, $color in $color-colors-map {
+  .epd-c-colorChip--#{$name} {
+    @include contra-color($color);
+  }
+}

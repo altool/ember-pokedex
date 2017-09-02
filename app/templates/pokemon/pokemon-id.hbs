@@ -25,11 +25,12 @@
   </div>
 
   <div class="epd-l-pokemon__basicColors">
-    <h5>
-      Color: {{#link-to 'pokemon_color.pokemon_color_id' model.species.color.name}}
-        {{ model.species.color.name }}
-      {{/link-to}}
-    </h5>
+    {{#link-to "pokemon_color.pokemon_color_id" model.species.color.name}}
+      {{color-chip
+        chipText=model.species.color.name
+        color=model.species.color.name
+      }}
+    {{/link-to}}
   </div>
 
   <div class="epd-l-pokemon__basicAbilities">
