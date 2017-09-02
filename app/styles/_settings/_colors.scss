@@ -1,0 +1,89 @@
+@import '../_tools/colors';
+
+// This function pulls specific color values from the below map
+@function color($color, $tone: 'base') {
+  @if map-has-key($color-map, $color) {
+    @return map-get(map-get($color-map, $color), $tone);
+  }
+}
+
+// All color palettes
+
+$g-color--shade: 25%;
+
+$g-color--primary: #6ab8cc;
+$g-color--secondary: #b0ba52;
+$g-color--action: #ff826e;
+$g-color--mono: #cbcbcb;
+
+
+// Map for storing all color variables
+$color-map: (
+  primary: (
+    base: $g-color--primary,
+
+    light: tint($g-color--primary, $g-color--shade),
+
+    dark: shade($g-color--primary, $g-color--shade)
+  ),
+
+  secondary: (
+    base: $g-color--secondary,
+
+    light: tint($g-color--secondary, $g-color--shade),
+
+    dark: shade($g-color--secondary, $g-color--shade)
+  ),
+
+  action: (
+    base: $g-color--action,
+
+    light: tint($g-color--action, $g-color--shade),
+
+    dark: shade($g-color--action, $g-color--shade)
+  ),
+
+  mono: (
+    base: $g-color--mono,
+
+    blank: #fff,
+    light: #eee,
+
+    dark: #333333,
+    darkest: #080401
+  )
+);
+
+$color-type-map: (
+  normal: #fbfcf7,
+  fighting: #ff851b,
+  flying: #00b2ff,
+  poison: #710193,
+  ground: #5d2c04,
+  rock: #391e07,
+  bug: #98bf64,
+  ghost: #59515f,
+  steel: #4d4c5d,
+  water: #0074d9,
+  fire: #b8100a,
+  grass: #2ecc40,
+  dark: #3d3934,
+  electric: #effd5f,
+  psychic: #b10dc9,
+  ice: #82edfe,
+  dragon: #24146f,
+  fairy: #f69acd
+);
+
+$color-colors-map: (
+  black: #111,
+  blue: #0074d9,
+  brown: #241709,
+  gray: #aaa,
+  green: #2ecc40,
+  pink: #f69acd,
+  purple: #b10dc9,
+  red: #ff4136,
+  white: #fffefc,
+  yellow: #effd5f
+);

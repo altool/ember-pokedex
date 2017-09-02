@@ -8,6 +8,7 @@ inflector.irregular('ability', 'ability');
 inflector.irregular('pokemon', 'pokemon');
 inflector.irregular('growth-rate', 'growth-rate');
 inflector.irregular('pokemon-color', 'pokemon-color');
+inflector.irregular('pokemon-shape', 'pokemon-shape');
 inflector.irregular('pokemon-species', 'pokemon-species');
 
 // Meet Ember Inspector's expectation of an export

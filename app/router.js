@@ -12,7 +12,7 @@ Router.map(function() {
     this.route('pokemon-id', {
       path: ':pokemon_id'
     }, function() {
-      this.route('species-info');
+      this.route('evolution');
       this.route('pokedex');
       this.route('moves');
       this.route('tms');
@@ -37,6 +37,11 @@ Router.map(function() {
   this.route('pokemon_color', function() {
     this.route('pokemon_color_id', {
       path: ':pokemon_color_id'
+    });
+  });
+  this.route('pokemon_shape', function() {
+    this.route('pokemon_shape_id', {
+      path: ':pokemon_shape_id'
     });
   });
 });

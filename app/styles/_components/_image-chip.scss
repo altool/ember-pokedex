@@ -1,0 +1,33 @@
+.epd-c-imageChip {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: spacing(triple);
+  box-shadow: container(box-shadow, 1);
+  background-color: color(mono, light);
+
+  .active > & {
+    font-weight: bold;
+
+    box-shadow: container(box-shadow, 3);
+  }
+}
+
+@each $name, $color in $color-type-map {
+  .epd-c-imageChip--#{$name} {
+    @include contra-color($color);
+  }
+}
+
+.epd-c-imageChip__img {
+  width: 1.5rem;
+  height: auto;
+
+  border-radius: 100%;
+}
+
+.epd-c-imageChip__text {
+  padding: 0 spacing() 0 spacing(half);
+
+  text-transform: capitalize;
+}

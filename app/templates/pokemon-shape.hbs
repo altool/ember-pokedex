@@ -1,0 +1,15 @@
+<h3>
+  Shapes!
+</h3>
+
+<ul>
+{{#each model as |shape|}}
+  <li>
+    {{#link-to "pokemon_shape.pokemon_shape_id" shape}}
+      {{ shape }}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}

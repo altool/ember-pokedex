@@ -1,4 +1,4 @@
-{{#paper-sidenav-container class="inner-sidenav"}}
+{{#paper-sidenav-container class="inner-sidenav epd-l-main__sidenav"}}
 
   {{#paper-sidenav
     class="md-whiteframe-z2"
@@ -17,12 +17,16 @@
   {{/paper-sidenav}}
 
   {{#paper-card-content class="flex"}}
-    {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
-      {{if leftSideBarLockedOpen "Unlock" "Lock"}}
-    {{/paper-button}}
+    <div class="epd-l-main__content">
+      <div class="epd-l-main__header">
+        {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
+          {{if leftSideBarLockedOpen "Unlock" "Lock"}}
+        {{/paper-button}}
+      </div>
 
-    <div class="epd-l-main__content layout-fill layout-row layout-wrap flex">
-      {{outlet}}
+      <div class="epd-l-main__body">
+        {{outlet}}
+      </div>
     </div>
   {{/paper-card-content}}
 

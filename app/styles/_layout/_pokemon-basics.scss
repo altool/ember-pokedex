@@ -1,0 +1,17 @@
+.epd-l-pokemon__basics {
+  display: grid;
+  grid-gap: 1px;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.epd-l-pokemon__basicTypes,
+.epd-l-pokemon__basicColors,
+.epd-l-pokemon__basicAbilities,
+.epd-l-pokemon__basicShape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: color(mono, light);
+}

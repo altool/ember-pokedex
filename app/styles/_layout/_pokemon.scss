@@ -1,0 +1,34 @@
+.epd-l-pokemon__container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'intro'
+    'basics'
+    'tabs'
+    'tabWindow'
+    'footer';
+
+  @include larger-than(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'intro basics basics'
+      'tabs tabs tabs'
+      'tabWindow tabWindow tabWindow'
+      'footer footer footer';
+  }
+}
+
+.epd-l-pokemon__intro { grid-area: intro; }
+
+.epd-l-pokemon__basics { grid-area: basics; }
+
+.epd-l-pokemon__tabs { grid-area: tabs; }
+
+.epd-l-pokemon__tabsWindow { grid-area: tabWindow; }
+
+.epd-l-pokemon__footer {
+  display: flex;
+  grid-area: footer;
+  justify-content: space-between;
+}
