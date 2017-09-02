@@ -10,8 +10,11 @@
 .epd-l-pokemon__basicAbilities,
 .epd-l-pokemon__basicShape {
   display: flex;
+  padding: spacing(half);
   align-items: center;
   justify-content: center;
 
   background-color: color(mono, light);
 }
+
+.epd-l-pokemon__basicAbilities { text-transform: capitalize; }

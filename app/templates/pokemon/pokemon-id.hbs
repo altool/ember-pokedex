@@ -38,7 +38,7 @@
       {{#each model.base.abilities as |ability| }}
         {{#link-to "ability.ability_id" ability.ability.name}}
           <li>
-            {{ ability.ability.name }} - {{ ability.is_hidden }}
+            {{ ability.ability.name }}{{#if ability.is_hidden}} (Hidden Ability){{/if}}
           </li>
         {{/link-to}}
       {{/each}}
@@ -46,42 +46,45 @@
   </div>
 
   <div class="epd-l-pokemon__basicShape">
-    <h5>
-      Shape: {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape.name}}
-        {{ model.species.shape.name }}
-      {{/link-to}}
-    </h5>
+    {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape.name}}
+      {{image-chip
+        chipText=model.species.shape.name
+        color='shape'
+      }}
+    {{/link-to}}
   </div>
 </div>
 
 <div class="epd-l-pokemon__tabs">
-  <ul>
-    <li>
-      {{#link-to "pokemon.pokemon-id.evolution" model.base.id}}
-        Species Info
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "pokemon.pokemon-id.moves" model.base.id}}
-        Moves
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "pokemon.pokemon-id.pokedex" model.base.id}}
-        Pokedex
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "pokemon.pokemon-id.stats" model.base.id}}
-        Stats
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "pokemon.pokemon-id.tms" model.base.id}}
-        TMs
-      {{/link-to}}
-    </li>
-  </ul>
+  {{#link-to "pokemon.pokemon-id.evolution" model.base.id class="epd-l-pokemon__tabLink"}}
+    {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
+      Evolution
+    {{/paper-button}}
+  {{/link-to}}
+
+  {{#link-to "pokemon.pokemon-id.moves" model.base.id class="epd-l-pokemon__tabLink"}}
+    {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
+      Moves
+    {{/paper-button}}
+  {{/link-to}}
+
+  {{#link-to "pokemon.pokemon-id.pokedex" model.base.id class="epd-l-pokemon__tabLink"}}
+    {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
+      Pokedex
+    {{/paper-button}}
+  {{/link-to}}
+
+  {{#link-to "pokemon.pokemon-id.stats" model.base.id class="epd-l-pokemon__tabLink"}}
+    {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
+      Stats
+    {{/paper-button}}
+  {{/link-to}}
+
+  {{#link-to "pokemon.pokemon-id.tms" model.base.id class="epd-l-pokemon__tabLink"}}
+    {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
+      TMs
+    {{/paper-button}}
+  {{/link-to}}
 </div>
 
 <div class="epd-l-pokemon__tabWindow">

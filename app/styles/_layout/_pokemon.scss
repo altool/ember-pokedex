@@ -1,5 +1,6 @@
 .epd-l-pokemon__container {
   display: grid;
+  height: 100%;
   grid-gap: 5px;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -11,6 +12,7 @@
 
   @include larger-than(md) {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
       'intro basics basics'
       'tabs tabs tabs'
@@ -19,16 +21,22 @@
   }
 }
 
-.epd-l-pokemon__intro { grid-area: intro; }
+.epd-l-pokemon__intro {
+  height: 100%;
+  grid-area: intro;
+}
 
 .epd-l-pokemon__basics { grid-area: basics; }
 
 .epd-l-pokemon__tabs { grid-area: tabs; }
 
-.epd-l-pokemon__tabsWindow { grid-area: tabWindow; }
+.epd-l-pokemon__tabWindow { grid-area: tabWindow; }
 
 .epd-l-pokemon__footer {
   display: flex;
+  flex-direction: column;
   grid-area: footer;
   justify-content: space-between;
+
+  @include larger-than(md) { flex-direction: row; }
 }
