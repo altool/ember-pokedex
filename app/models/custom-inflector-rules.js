@@ -10,6 +10,7 @@ inflector.irregular('growth-rate', 'growth-rate');
 inflector.irregular('pokemon-color', 'pokemon-color');
 inflector.irregular('pokemon-shape', 'pokemon-shape');
 inflector.irregular('pokemon-species', 'pokemon-species');
+inflector.irregular('evolution-chain', 'evolution-chain');
 
 // Meet Ember Inspector's expectation of an export
 export default {};

@@ -1,4 +1,5 @@
 'use strict';
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -9,8 +10,6 @@ export default DS.Model.extend({
   shape: DS.attr({
     name: DS.attr('string')
   }),
-  evolution_chain: DS.attr({
-    url: DS.attr('string')
-  }),
+  evolution_chain: DS.attr(),
   flavor_text_entries: DS.attr()
 });

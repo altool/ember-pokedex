@@ -12,7 +12,11 @@ Router.map(function() {
     this.route('pokemon_id', {
       path: ':pokemon_id'
     }, function() {
-      this.route('evolution');
+      this.route('evolution', function() {
+        this.route('evolution_chain', {
+          path: ':evolution_chain'
+        });
+      });
       this.route('pokedex');
       this.route('moves');
       this.route('tms');
