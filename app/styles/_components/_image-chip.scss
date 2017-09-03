@@ -7,16 +7,18 @@
   box-shadow: container(box-shadow, 1);
   background-color: color(mono, light);
 
+  transition: 0.5s;
+
   .active > & {
     font-weight: bold;
 
     box-shadow: container(box-shadow, 2);
   }
-}
 
-@each $name, $color in $color-type-map {
-  .epd-c-imageChip--#{$name} {
-    @include contra-color($color);
+  @include hovers() {
+    box-shadow: container(box-shadow, 2);
+
+    transition: 0.5s;
   }
 }
 
@@ -32,3 +34,11 @@
 
   text-transform: capitalize;
 }
+
+@each $name, $color in $color-type-map {
+  .epd-c-imageChip--#{$name} {
+    @include contra-color($color);
+  }
+}
+
+.epd-c-imageChip--shape { @include contra-color(color(mono, blank)); }

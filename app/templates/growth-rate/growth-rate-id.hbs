@@ -5,7 +5,7 @@
 <ul>
   {{#each model.pokemon_species as |pokemon|}}
     <li>
-      {{#link-to 'pokemon.pokemon-id' pokemon.name}}
+      {{#link-to 'pokemon.pokemon_id' pokemon.name}}
         {{ pokemon.name }}
       {{/link-to}}
     </li>

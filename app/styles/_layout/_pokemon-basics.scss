@@ -1,20 +1,31 @@
 .epd-l-pokemon__basics {
   display: grid;
-  grid-gap: 1px;
+  grid-gap: spacing(quart);
   grid-auto-flow: dense;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.epd-l-pokemon__basicTypes,
-.epd-l-pokemon__basicColors,
-.epd-l-pokemon__basicAbilities,
-.epd-l-pokemon__basicShape {
-  display: flex;
-  padding: spacing(half);
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr auto;
 
   background-color: color(mono, light);
 }
 
-.epd-l-pokemon__basicAbilities { text-transform: capitalize; }
+.epd-l-pokemon__basicTags,
+.epd-l-pokemon__basicAbilities {
+  display: flex;
+  padding: spacing(half);
+}
+
+.epd-l-pokemon__basicTags {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.epd-l-pokemon__basicTagGroup {
+  @include clearfix();
+  margin-bottom: spacing(half);
+}
+
+.epd-l-pokemon__basicAbilities {
+  align-items: center;
+  justify-content: center;
+
+  text-transform: capitalize;
+}

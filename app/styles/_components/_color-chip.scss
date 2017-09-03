@@ -1,18 +1,27 @@
 .epd-c-colorChip {
   padding: 0.25em 0.5em 0.25rem 0.55rem;
-  margin: spacing(quart) spacing(half);
+  margin: spacing(quart);
 
   border-radius: spacing(third);
   box-shadow: container(box-shadow, 1);
 
   font-size: 0.8rem;
   text-align: center;
+  line-height: 2;
   text-transform: uppercase;
+
+  transition: 0.5s;
 
   .active > & {
     font-weight: bold;
 
     box-shadow: container(box-shadow, 2);
+  }
+
+  @include hovers() {
+    box-shadow: container(box-shadow, 2);
+
+    transition: 0.5s;
   }
 }
 

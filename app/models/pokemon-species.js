@@ -8,5 +8,9 @@ export default DS.Model.extend({
   }),
   shape: DS.attr({
     name: DS.attr('string')
-  })
+  }),
+  evolution_chain: DS.attr({
+    url: DS.attr('string')
+  }),
+  flavor_text_entries: DS.attr()
 });

@@ -13,26 +13,6 @@
 </div>
 
 <div class="epd-l-pokemon__basics">
-  <div class="epd-l-pokemon__basicTypes">
-    {{#each model.base.types as |type|}}
-      {{#link-to "type.type-id" type.type.name}}
-        {{image-chip
-          chipText=type.type.name
-          color=type.type.name
-        }}
-      {{/link-to}}
-    {{/each}}
-  </div>
-
-  <div class="epd-l-pokemon__basicColors">
-    {{#link-to "pokemon_color.pokemon_color_id" model.species.color.name}}
-      {{color-chip
-        chipText=model.species.color.name
-        color=model.species.color.name
-      }}
-    {{/link-to}}
-  </div>
-
   <div class="epd-l-pokemon__basicAbilities">
     <ul>
       {{#each model.base.abilities as |ability| }}
@@ -45,42 +25,64 @@
     </ul>
   </div>
 
-  <div class="epd-l-pokemon__basicShape">
-    {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape.name}}
-      {{image-chip
-        chipText=model.species.shape.name
-        color='shape'
-      }}
-    {{/link-to}}
+  <div class="epd-l-pokemon__basicTags">
+    <div class="epd-l-pokemon__basicTagGroup">
+      {{#each model.base.types as |type|}}
+        {{#link-to "type.type-id" type.type.name}}
+          {{image-chip
+            chipText=type.type.name
+            color=type.type.name
+          }}
+        {{/link-to}}
+      {{/each}}
+    </div>
+
+    <div class="epd-l-pokemon__basicTagGroup">
+      {{#link-to "pokemon_color.pokemon_color_id" model.species.color.name}}
+        {{color-chip
+          chipText=model.species.color.name
+          color=model.species.color.name
+        }}
+      {{/link-to}}
+    </div>
+
+    <div class="epd-l-pokemon__basicTagGroup">
+      {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape.name}}
+        {{image-chip
+          chipText=model.species.shape.name
+          color='shape'
+        }}
+      {{/link-to}}
+    </div>
   </div>
 </div>
 
 <div class="epd-l-pokemon__tabs">
-  {{#link-to "pokemon.pokemon-id.evolution" model.base.id class="epd-l-pokemon__tabLink"}}
+  {{#link-to "pokemon.pokemon_id.evolution" model.base.id class="epd-l-pokemon__tabLink"}}
     {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
       Evolution
     {{/paper-button}}
   {{/link-to}}
 
-  {{#link-to "pokemon.pokemon-id.moves" model.base.id class="epd-l-pokemon__tabLink"}}
+  {{#link-to "pokemon.pokemon_id.moves" model.base.id class="epd-l-pokemon__tabLink"}}
     {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
       Moves
     {{/paper-button}}
   {{/link-to}}
 
-  {{#link-to "pokemon.pokemon-id.pokedex" model.base.id class="epd-l-pokemon__tabLink"}}
+  {{#link-to "pokemon.pokemon_id.pokedex" model.base.id class="epd-l-pokemon__tabLink"}}
     {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
       Pokedex
     {{/paper-button}}
   {{/link-to}}
 
-  {{#link-to "pokemon.pokemon-id.stats" model.base.id class="epd-l-pokemon__tabLink"}}
+  {{#link-to "pokemon.pokemon_id.stats" model.base.id class="epd-l-pokemon__tabLink"}}
     {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
       Stats
     {{/paper-button}}
   {{/link-to}}
 
-  {{#link-to "pokemon.pokemon-id.tms" model.base.id class="epd-l-pokemon__tabLink"}}
+  {{#link-to "pokemon.pokemon_id.tms" model.base.id class="epd-l-pokemon__tabLink"}}
     {{#paper-button primary=true class="epd-l-pokemon__tabButton" raised=true}}
       TMs
     {{/paper-button}}
@@ -92,7 +94,7 @@
 </div>
 
 {{#paper-list class="epd-l-pokemon__footer"}}
-  {{#link-to "pokemon.pokemon-id" model.base.prev_id}}
+  {{#link-to "pokemon.pokemon_id" model.base.prev_id}}
     {{#paper-item class="md-2-line"}}
       <img src={{sprite model.base.prev_id}} class="md-avatar">
       <div class="md-list-item-text">
@@ -101,7 +103,7 @@
     {{/paper-item}}
   {{/link-to}}
 
-  {{#link-to "pokemon.pokemon-id" model.base.next_id}}
+  {{#link-to "pokemon.pokemon_id" model.base.next_id}}
     {{#paper-item class="md-2-line"}}
       <img src={{sprite model.base.next_id}} class="md-avatar">
       <div class="md-list-item-text">

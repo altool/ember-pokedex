@@ -13,6 +13,8 @@ export default DS.Model.extend({
     front_shiny: DS.attr('url')
   }),
   abilities: DS.attr(),
+  moves: DS.attr(),
+  stats: DS.attr(),
 
   next_id: Ember.computed('id', function(){
     let id = parseInt(this.get('id'));

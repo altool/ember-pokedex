@@ -1,7 +1,7 @@
 .epd-l-pokemon__container {
   display: grid;
   height: 100%;
-  grid-gap: 5px;
+  grid-gap: spacing(quart);
   grid-template-columns: 1fr;
   grid-template-areas:
     'intro'

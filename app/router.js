@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('pokemon', function() {
-    this.route('pokemon-id', {
+    this.route('pokemon_id', {
       path: ':pokemon_id'
     }, function() {
       this.route('evolution');

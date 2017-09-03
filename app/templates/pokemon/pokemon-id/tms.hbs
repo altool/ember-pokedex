@@ -2,6 +2,10 @@
   TM Moves!  
 </h5>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus commodi assumenda consectetur, dolores perspiciatis ex, incidunt enim possimus, ducimus architecto excepturi quae deleniti inventore ut doloribus cum! Aliquam, accusantium cupiditate.
-</p>
+<ul>
+{{#each tmMoves as |move|}}
+  <li>
+    {{ move.move.name }}
+  </li>
+{{/each}}
+</ul>

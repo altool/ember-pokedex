@@ -1,7 +1,11 @@
-<h5>
+<h4>
   Stats!  
-</h5>
+</h4>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus commodi assumenda consectetur, dolores perspiciatis ex, incidunt enim possimus, ducimus architecto excepturi quae deleniti inventore ut doloribus cum! Aliquam, accusantium cupiditate.
-</p>
+<ul>
+{{#each stats_reversed as |stat|}}
+  <li>
+    {{stat.stat.name}} - {{stat.base_stat}}
+  </li>
+{{/each}}
+</ul>
