@@ -1,0 +1,5 @@
+.epd-c-evoCard__container {
+  color: color(mono, darkest);
+
+  @include hovers() { color: color(mono, darkest); }
+}

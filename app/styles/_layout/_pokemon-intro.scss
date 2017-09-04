@@ -1,13 +1,11 @@
 .epd-l-pokemon__intro {
-  display: flex;
-  flex-direction: column;
+  
+  md-card { margin: 0; }
+
+  md-card-title { @include contra-color(color(mono, darkest)); }
 }
 
 .epd-l-pokemon__introName {
-  padding: spacing(half) 0;
-  margin: 0;
-
-  @include contra-color(color(mono, darkest));
   text-align: center;
   text-transform: capitalize;
 }

@@ -1,11 +1,16 @@
-<h3>
-  {{ model.chain.is_baby }}
-</h3>
+{{evolution-card
+  data=model.chain}}
 
-<h5>
-  Evolution Chain!
-</h5>
+{{#if model.chain.evolves_to}}
+  {{#each model.chain.evolves_to as |stage_1|}}
+    {{evolution-card
+        data=stage_1}}
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore in consectetur architecto optio nemo deserunt rem, magnam officia placeat quod reprehenderit esse dolore aliquid alias ut repellat rerum qui ullam!
-</p>
+    {{#if stage_1.evolves_to}}
+      {{#each stage_1.evolves_to as |stage_2|}}
+        {{evolution-card
+          data=stage_2}}
+      {{/each}}
+    {{/if}}
+  {{/each}}
+{{/if}}

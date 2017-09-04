@@ -1,0 +1,19 @@
+{{#link-to "pokemon.pokemon_id" data.species.name class="epd-c-evoCard__container"}}
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon_id data.species.url}}.png" alt="" class="md-avatar">
+
+  <h3>
+    {{data.species.name}}
+  </h3>
+
+  <ul>
+    {{#each evo_details as |evolve|}}
+      {{#if evolve.evo_result}}
+        <li>{{evolve.evo_result}}</li>
+      {{/if}}
+
+      {{#if evolve.relative_physical_stats}}
+        <li>with relative physical stats (update!)</li>
+      {{/if}}
+    {{/each}}
+  </ul>
+{{/link-to}}

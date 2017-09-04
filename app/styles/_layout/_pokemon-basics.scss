@@ -1,10 +1,12 @@
 .epd-l-pokemon__basics {
   display: grid;
-  grid-gap: spacing(quart);
+  margin: 0;
+  grid-gap: spacing(half);
   grid-auto-flow: dense;
   grid-template-columns: 1fr auto;
 
   background-color: color(mono, light);
+  box-shadow: container(box-shadow, 1);
 }
 
 .epd-l-pokemon__basicTags,
