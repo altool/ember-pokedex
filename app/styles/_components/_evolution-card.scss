@@ -3,3 +3,5 @@
 
   @include hovers() { color: color(mono, darkest); }
 }
+
+.epd-c-evoCard__name { text-transform: capitalize; }
