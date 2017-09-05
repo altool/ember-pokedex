@@ -3,9 +3,9 @@
 </h5>
 
 <ul>
-{{#each lvlMoves as |move|}}
+{{#each sortedMoves as |move|}}
   <li>
-    {{ move.move.name }}
+    {{move.name}} at {{move.level}}
   </li>
 {{/each}}
 </ul>
