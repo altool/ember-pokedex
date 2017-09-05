@@ -16,6 +16,18 @@
 </div>
 
 {{#paper-card class="epd-l-pokemon__basics"}}
+  <div class="epd-l-pokemon__basicInfo">
+    <ul>
+      <li>
+        <strong>{{model.species.generation.name}}</strong>
+      </li>
+      <li>Height: {{model.base.height_meters}}</li>
+      <li>Weight: {{model.base.weight_kg}}</li>
+      <li>Habitat: {{model.species.habitat.name}}</li>
+      <li>Capture Rate: {{model.species.capture_rate}}</li>
+      <li>Growth Rate: {{model.species.growth_rate.name}}</li>
+    </ul>
+  </div>
   <div class="epd-l-pokemon__basicAbilities">
     <ul>
       {{#each model.base.abilities as |ability| }}

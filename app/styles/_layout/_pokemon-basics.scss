@@ -3,14 +3,15 @@
   margin: 0;
   grid-gap: spacing(half);
   grid-auto-flow: dense;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 1fr auto;
 
   background-color: color(mono, light);
   box-shadow: container(box-shadow, 1);
 }
 
-.epd-l-pokemon__basicTags,
-.epd-l-pokemon__basicAbilities {
+.epd-l-pokemon__basicInfo,
+.epd-l-pokemon__basicAbilities,
+.epd-l-pokemon__basicTags {
   display: flex;
   padding: spacing(half);
 }
