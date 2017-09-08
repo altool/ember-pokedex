@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   classNameBindings: ['chipColor'],
 
   chipImage: 'http://lorempixel.com/g/100/100',
-  chipText: 'Text here!',
+  chipText: '',
 
   chipColor: Ember.computed('color', function() {
     return 'epd-c-imageChip--' + this.get('color');

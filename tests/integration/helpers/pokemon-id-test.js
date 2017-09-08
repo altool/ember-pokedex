@@ -1,4 +1,4 @@
-
+'use strict';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -8,10 +8,10 @@ moduleForComponent('pokemon-id', 'helper:pokemon-id', {
 
 // Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('inputValue', '');
 
   this.render(hbs`{{pokemon-id inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), '');
 });
 

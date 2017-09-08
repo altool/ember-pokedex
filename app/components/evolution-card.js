@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   evo_details: Ember.computed('data.evolution_details', function() {
-    let data = this.get('data.evolution_details');
+    let data = this.get('data.evolution_details') ? this.get('data.evolution_details') : [];
 
     data.forEach(function(dataItem){
       let evo_result = '';

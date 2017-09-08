@@ -1,3 +1,4 @@
+'use strict';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -13,13 +14,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{evolution-card}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#evolution-card}}
-      template block text
-    {{/evolution-card}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
