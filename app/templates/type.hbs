@@ -4,10 +4,10 @@
 
 <ul>
 {{#each model as |type|}}
-  {{#link-to 'type.type-id' type}}
+  {{#link-to 'type.type-id' type.id}}
     {{image-chip
-      chipText=type
-      color=type
+      chipText=type.name
+      color=type.name
     }}
   {{/link-to}}
 {{/each}}

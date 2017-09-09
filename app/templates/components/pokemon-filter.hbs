@@ -7,12 +7,12 @@
     {{paper-input class="flex-50" label="Name" value=search_value onChange=(action "update_search")}}
   {{/paper-subheader}}
 
-  {{#each filtered_pokemon as |pokemon|}}
-    {{#link-to 'pokemon.pokemon_id' pokemon.name class="list-flex-layout__item"}}
+  {{#each sorted_pokemon as |pokemon|}}
+    {{#link-to 'pokemon.pokemon_id' pokemon.id class="list-flex-layout__item"}}
       {{#paper-item class="md-2-line"}}
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon_id pokemon.url}}.png" alt="" class="md-avatar">
         <div class="md-list-item-text">
-          <h3>{{pokemon.name}}</h3>
+          <h3>#{{pokemon.id}}: {{cleanup-text pokemon.name}}</h3>
         </div>
       {{/paper-item}}  
     {{/link-to}}

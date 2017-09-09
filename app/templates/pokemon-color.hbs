@@ -3,10 +3,10 @@
 </h3>
 
 {{#each model as |color|}}
-  {{#link-to "pokemon_color.pokemon_color_id" color}}
+  {{#link-to "pokemon_color.pokemon_color_id" color.id}}
     {{color-chip
-      chipText=color
-      color=color
+      chipText=color.name
+      color=color.name
     }}
   {{/link-to}}
 {{/each}}

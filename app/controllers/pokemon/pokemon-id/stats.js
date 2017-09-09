@@ -2,7 +2,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  stats_reversed: Ember.computed('model.base.stats', function() {
-    return this.get('model.base.stats').reverse();
-  })
+  stats: Ember.computed.filter('model.base.stats', function() { return true; }),
+
+  stats_reversed: Ember.computed('stats', function() {
+    return this.get('stats').reverse();
+  }),
 });

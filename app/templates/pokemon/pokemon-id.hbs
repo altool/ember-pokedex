@@ -21,19 +21,25 @@
       <li>
         <strong>{{model.species.generation.name}}</strong>
       </li>
+      {{#each genus as |genus|}}
+        <li>{{ genus.genus }} Pokemon</li>
+      {{/each}}
       <li>Height: {{model.base.height_meters}}</li>
       <li>Weight: {{model.base.weight_kg}}</li>
-      <li>Habitat: {{model.species.habitat.name}}</li>
+      {{#if model.species.habitat.name}}
+        <li>Habitat: {{cleanup-text model.species.habitat.name}}</li>
+      {{/if}}
       <li>Capture Rate: {{model.species.capture_rate}}</li>
-      <li>Growth Rate: {{model.species.growth_rate.name}}</li>
+      <li>Growth Rate: {{cleanup-text model.species.growth_rate.name}}</li>
+      <li>Hatch Rate: {{ model.species.hatch_steps }} steps</li>
     </ul>
   </div>
   <div class="epd-l-pokemon__basicAbilities">
     <ul>
-      {{#each model.base.abilities as |ability| }}
-        {{#link-to "ability.ability_id" ability.ability.name}}
+      {{#each sorted_abilities as |ability| }}
+        {{#link-to "ability.ability_id" ability.id}}
           <li>
-            {{ ability.ability.name }}{{#if ability.is_hidden}} (Hidden Ability){{/if}}
+            {{cleanup-text ability.name}}{{#if ability.is_hidden}} (hidden){{/if}}
           </li>
         {{/link-to}}
       {{/each}}
@@ -42,18 +48,18 @@
 
   <div class="epd-l-pokemon__basicTags">
     <div class="epd-l-pokemon__basicTagGroup">
-      {{#each model.base.types as |type|}}
-        {{#link-to "type.type-id" type.type.name}}
+      {{#each types_data as |type|}}
+        {{#link-to "type.type-id" type.id}}
           {{image-chip
-            chipText=type.type.name
-            color=type.type.name
+            chipText=type.name
+            color=type.name
           }}
         {{/link-to}}
       {{/each}}
     </div>
 
     <div class="epd-l-pokemon__basicTagGroup">
-      {{#link-to "pokemon_color.pokemon_color_id" model.species.color.name}}
+      {{#link-to "pokemon_color.pokemon_color_id" model.species.color_id}}
         {{color-chip
           chipText=model.species.color.name
           color=model.species.color.name
@@ -62,7 +68,7 @@
     </div>
 
     <div class="epd-l-pokemon__basicTagGroup">
-      {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape.name}}
+      {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape_id}}
         {{image-chip
           chipText=model.species.shape.name
           color='shape'
