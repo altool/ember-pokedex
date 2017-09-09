@@ -1,11 +1,15 @@
+
 <div class="flex-100">
   {{#paper-list class="list-flex-layout__container"}}
     {{#paper-subheader}}
       <h2>
         {{model.name}}
       </h2>
+
+      {{paper-input class="flex-50" label="Name" value=color_search onChange=(action "update_search")}}
     {{/paper-subheader}}
-    {{#each model.pokemon_species as |pokemon|}}
+
+    {{#each filtered_pokemon as |pokemon|}}
       {{#link-to 'pokemon.pokemon_id' pokemon.name class="list-flex-layout__item"}}
         {{#paper-item class="md-2-line"}}
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon_id pokemon.url}}.png" alt="" class="md-avatar">
