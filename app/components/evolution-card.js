@@ -2,6 +2,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  evo_id: Ember.computed('data.species.url', function(){
+    return String(this.get('data.species.url')).split('/')[6];
+  }),
+
   evo_details: Ember.computed('data.evolution_details', function() {
     let data = this.get('data.evolution_details') ? this.get('data.evolution_details') : [];
 
@@ -52,7 +56,7 @@ export default Ember.Component.extend({
         }
       }
 
-      Ember.set(dataItem, 'evo_result', evo_result.replace('-', ' '));
+      Ember.set(dataItem, 'evo_result', evo_result.replace(/-/g, " "));
     });
 
     return data;

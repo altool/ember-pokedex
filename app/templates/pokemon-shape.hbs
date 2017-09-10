@@ -2,14 +2,14 @@
   Shapes!
 </h3>
 
-<ul>
-{{#each model as |shape|}}
-  <li>
-    {{#link-to "pokemon_shape.pokemon_shape_id" shape.id}}
-      {{ shape.name }}
-    {{/link-to}}
-  </li>
+{{#each shape_chips as |shape|}}
+  {{#link-to "pokemon_shape.pokemon_shape_id" shape.id}}
+    {{image-chip
+      chipText=shape.name
+      color='shape'
+      chipImage=shape.url
+    }}
+  {{/link-to}}
 {{/each}}
-</ul>
 
 {{outlet}}

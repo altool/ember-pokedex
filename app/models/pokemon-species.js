@@ -35,6 +35,12 @@ export default DS.Model.extend({
     return String(this.get('shape.url')).split('/')[6];
   }),
 
+  shape_img_path: Ember.computed(function(){
+    let shape = String(this.get('shape.name'));
+
+    return `/assets/images/forms/${shape}.png`;
+  }),
+
   hatch_steps: Ember.computed('hatch_counter', function(){
     return (parseInt(this.get('hatch_counter')) + 1) * 255;
   })

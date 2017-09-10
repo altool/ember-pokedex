@@ -1,0 +1,15 @@
+<h2>
+  Generation time!
+</h2>
+
+<ul>
+  {{#each model as |gen|}}
+    <li>
+      {{#link-to "generation.generation_id" gen.id}}
+        Generation {{gen.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

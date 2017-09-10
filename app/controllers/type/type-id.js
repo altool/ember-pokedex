@@ -9,8 +9,6 @@ export default Ember.Controller.extend({
       "url": pokemon.pokemon.url
     };
 
-    console.log(new_data);
-
     return new_data;
   })
 });

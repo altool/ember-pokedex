@@ -3,11 +3,12 @@
 </h2>
 
 <ul>
-{{#each model as |type|}}
+{{#each type_chips as |type|}}
   {{#link-to 'type.type-id' type.id}}
     {{image-chip
       chipText=type.name
       color=type.name
+      chipImage=type.url
     }}
   {{/link-to}}
 {{/each}}

@@ -1,7 +1,7 @@
 {{#paper-list class="list-flex-layout__container"}}
   {{#paper-subheader}}
     <h2>
-      {{name}}
+      {{cleanup-text name}}
     </h2>
 
     {{paper-input class="flex-50" label="Name" value=search_value onChange=(action "update_search")}}
@@ -12,7 +12,7 @@
       {{#paper-item class="md-2-line"}}
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon_id pokemon.url}}.png" alt="" class="md-avatar">
         <div class="md-list-item-text">
-          <h3>#{{pokemon.id}}: {{cleanup-text pokemon.name}}</h3>
+          <h3>#{{pokemon.id}}: {{cleanup-text pokemon.name}} {{#if pokemon.is_hidden}}<strong>(hidden ability)</strong>{{/if}}</h3>
         </div>
       {{/paper-item}}  
     {{/link-to}}

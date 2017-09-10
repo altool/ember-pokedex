@@ -19,7 +19,9 @@
   <div class="epd-l-pokemon__basicInfo">
     <ul>
       <li>
-        <strong>{{model.species.generation.name}}</strong>
+        {{#link-to "generation.generation_id" generation.id}}
+          <strong>Generation <span class="epd-h-uppercase">{{generation.numeral}}</span></strong>
+        {{/link-to}}
       </li>
       {{#each genus as |genus|}}
         <li>{{ genus.genus }} Pokemon</li>
@@ -27,10 +29,18 @@
       <li>Height: {{model.base.height_meters}}</li>
       <li>Weight: {{model.base.weight_kg}}</li>
       {{#if model.species.habitat.name}}
-        <li>Habitat: {{cleanup-text model.species.habitat.name}}</li>
+        <li>Habitat:
+          {{#link-to "pokemon_habitat.pokemon_habitat_id" habitat_id}}
+            {{cleanup-text model.species.habitat.name}}
+          {{/link-to}}
+        </li>
       {{/if}}
       <li>Capture Rate: {{model.species.capture_rate}}</li>
-      <li>Growth Rate: {{cleanup-text model.species.growth_rate.name}}</li>
+      <li>Growth Rate: 
+        {{#link-to "growth_rate.growth_rate_id" growth_rate_id}}
+          {{cleanup-text model.species.growth_rate.name}}
+        {{/link-to}}
+      </li>
       <li>Hatch Rate: {{ model.species.hatch_steps }} steps</li>
     </ul>
   </div>
@@ -48,11 +58,22 @@
 
   <div class="epd-l-pokemon__basicTags">
     <div class="epd-l-pokemon__basicTagGroup">
+      {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape_id}}
+        {{image-chip
+          chipText=model.species.shape.name
+          color='shape'
+          chipImage=model.species.shape_img_path
+        }}
+      {{/link-to}}
+    </div>
+
+    <div class="epd-l-pokemon__basicTagGroup">
       {{#each types_data as |type|}}
         {{#link-to "type.type-id" type.id}}
           {{image-chip
             chipText=type.name
             color=type.name
+            chipImage=type.url
           }}
         {{/link-to}}
       {{/each}}
@@ -63,15 +84,6 @@
         {{color-chip
           chipText=model.species.color.name
           color=model.species.color.name
-        }}
-      {{/link-to}}
-    </div>
-
-    <div class="epd-l-pokemon__basicTagGroup">
-      {{#link-to 'pokemon_shape.pokemon_shape_id' model.species.shape_id}}
-        {{image-chip
-          chipText=model.species.shape.name
-          color='shape'
         }}
       {{/link-to}}
     </div>

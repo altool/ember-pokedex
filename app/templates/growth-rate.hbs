@@ -2,4 +2,14 @@
   Growth rates!
 </h3>
 
+<ul>
+  {{#each model as |rate|}}
+    <li>
+      {{#link-to "growth_rate.growth_rate_id" rate.id}}
+        {{cleanup-text rate.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
 {{outlet}}

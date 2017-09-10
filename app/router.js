@@ -48,6 +48,16 @@ Router.map(function() {
       path: ':pokemon_shape_id'
     });
   });
+  this.route('generation', function() {
+    this.route('generation_id', {
+      path: ':generation_id'
+    });
+  });
+  this.route('pokemon_habitat', function() {
+    this.route('pokemon_habitat_id', {
+      path: ':pokemon_habitat_id'
+    });
+  });
 });
 
 export default Router;

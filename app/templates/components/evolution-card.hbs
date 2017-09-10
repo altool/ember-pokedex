@@ -1,5 +1,5 @@
-{{#link-to "pokemon.pokemon_id" data.species.name class="epd-c-evoCard__container"}}
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon_id data.species.url}}.png" alt="" class="md-avatar">
+{{#link-to "pokemon.pokemon_id" evo_id class="epd-c-evoCard__container"}}
+  <img src="{{sprite evo_id}}" alt="" class="md-avatar">
 
   <h3 class="epd-c-evoCard__name">
     {{data.species.name}}

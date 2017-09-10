@@ -8,11 +8,11 @@ export default Ember.Component.extend({
 
   pokemon_data: Ember.computed.map('pokemon', function(pokemon){
     let new_data = {
+      "id": parseInt(String(pokemon.url).split('/')[6]),
       "name": pokemon.name,
       "url": pokemon.url,
-      "id": parseInt(String(pokemon.url).split('/')[6])
+      "is_hidden": pokemon.is_hidden
     };
-
 
     return new_data;
   }),

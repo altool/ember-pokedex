@@ -1,0 +1,15 @@
+<h3>
+  Habitats
+</h3>
+
+<ul>
+{{#each model as |habitat|}}
+  <li>
+    {{#link-to "pokemon_habitat.pokemon_habitat_id" habitat.id}}
+      {{cleanup-text habitat.name}}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}
