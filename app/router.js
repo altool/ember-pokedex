@@ -19,7 +19,6 @@ Router.map(function() {
       });
       this.route('pokedex');
       this.route('moves');
-      this.route('tms');
       this.route('stats');
     });
   });

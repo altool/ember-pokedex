@@ -3,7 +3,7 @@
   grid-gap: spacing(half);
   grid-template-columns: 1fr;
 
-  @include larger-than(sm) { grid-template-columns: repeat(5, 1fr); }
+  @include larger-than(sm) { grid-template-columns: repeat(4, 1fr); }
 }
 
 .epd-l-pokemon__tabLink {}

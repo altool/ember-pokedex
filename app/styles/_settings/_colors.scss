@@ -10,6 +10,7 @@
 // All color palettes
 
 $g-color--shade: 25%;
+$g-color--shade-2: 70%;
 
 $g-color--primary: #6ab8cc;
 $g-color--secondary: #b0ba52;
@@ -22,32 +23,39 @@ $color-map: (
   primary: (
     base: $g-color--primary,
 
+    lighter: tint($g-color--primary, $g-color--shade-2),
     light: tint($g-color--primary, $g-color--shade),
 
-    dark: shade($g-color--primary, $g-color--shade)
+    dark: shade($g-color--primary, $g-color--shade),
+    darker: shade($g-color--primary, $g-color--shade-2)
   ),
 
   secondary: (
     base: $g-color--secondary,
 
+    lighter: tint($g-color--secondary, $g-color--shade-2),
     light: tint($g-color--secondary, $g-color--shade),
 
-    dark: shade($g-color--secondary, $g-color--shade)
+    dark: shade($g-color--secondary, $g-color--shade),
+    darker: shade($g-color--secondary, $g-color--shade-2)
   ),
 
   action: (
     base: $g-color--action,
 
+    lighter: tint($g-color--action, $g-color--shade-2),
     light: tint($g-color--action, $g-color--shade),
 
-    dark: shade($g-color--action, $g-color--shade)
+    dark: shade($g-color--action, $g-color--shade),
+    darker: shade($g-color--action, $g-color--shade-2)
   ),
 
   mono: (
     base: $g-color--mono,
 
     blank: #fff,
-    light: #eee,
+    lighter: #eee,
+    light: #ddd,
 
     dark: #333333,
     darkest: #080401
