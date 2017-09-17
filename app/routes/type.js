@@ -32,10 +32,10 @@ export default Ember.Route.extend({
         'name': 'steel',
         'id': 9
       }, {
-        'name': 'water',
+        'name': 'fire',
         'id': 10
       }, {
-        'name': 'fire',
+        'name': 'water',
         'id': 11
       }, {
         'name': 'grass',

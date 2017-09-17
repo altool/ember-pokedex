@@ -1,15 +1,17 @@
-{{#link-to "pokemon.pokemon_id" evo_id class="epd-c-evoCard__container"}}
+{{#link-to "pokemon.pokemon_id" evo_id class="epd-c-evoCard__link"}}
   <img src="{{sprite evo_id}}" alt="" class="md-avatar">
 
-  <h3 class="epd-c-evoCard__name">
-    {{data.species.name}}
-  </h3>
+  <div class="epd-c-evoCard__meta">
+    <h3 class="epd-c-evoCard__name">
+      {{data.species.name}}
+    </h3>
 
-  <ul>
-    {{#each evo_details as |evolve|}}
-      {{#if evolve.evo_result}}
-        <li class="epd-c-evoCard__method">{{evolve.evo_result}}</li>
-      {{/if}}
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each evo_details as |evolve|}}
+        {{#if evolve.evo_result}}
+          <li class="epd-c-evoCard__method">{{evolve.evo_result}}</li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
 {{/link-to}}

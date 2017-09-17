@@ -2,6 +2,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['epd-c-evoCard__container', 'epd-l-evolution__stage'],
+  classNameBindings: ['stage_class'],
+
+  stage_class: Ember.computed('stage', function(){
+    return 'epd-c-evoCard__container--stage-' + this.get('stage');
+  }),
+
+  container_class: Ember.computed('stage', function(){
+    return 'epd-c-evoCard__container--stage-' + this.get('stage');
+  }),
+
   evo_id: Ember.computed('data.species.url', function(){
     return String(this.get('data.species.url')).split('/')[6];
   }),

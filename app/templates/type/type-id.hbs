@@ -1,16 +1,3 @@
-<ul>
-  {{#each model.damage_relations.half_damage_from as |half_from| }}
-    <li>
-      {{image-chip
-        chipText=half_from.name
-        color=half_from.name
-        chipImage=half_from.url
-      }}
-    </li>
-  {{/each}}
-</ul>
-
-
 <div class="flex-100">
   {{pokemon-filter
       name=model.name
