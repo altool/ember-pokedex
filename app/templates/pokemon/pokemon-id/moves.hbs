@@ -1,21 +1,24 @@
-<h5>
-  Moves!
-</h5>
+{{paper-input class="flex-50" label="Search moves" value=search_value onChange=(action "update_search")}}
 
-<ul>
-{{#each sortedMoves as |move|}}
-  <li>
-    {{move.name}} at {{move.level}}
-  </li>
-{{/each}}
-</ul>
-
-<hr>
-
-<ul>
-{{#each tmMoves as |move|}}
-  <li>
-    {{ move.move.name }}
-  </li>
-{{/each}}
-</ul>
+<table class="rtable">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" width="15%">Method</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each filtered_moves as |move|}}
+      <tr>
+        <td data-label="Name">{{cleanup-text move.name}}</td>
+        <td data-label="Method">Lvl {{move.level}}</td>
+      </tr>
+    {{/each}}
+    {{#each filtered_tms as |move|}}
+      <tr class="rtable__secondaryRow">
+        <td data-label="Name">{{cleanup-text move.move.name}}</td>
+        <td data-label="Method">Machine</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
