@@ -41,7 +41,11 @@ $rt-gray-light: color(mono, lighter);
     background-color: tint(color(secondary, lighter), 40%);
   }
 
-  td { padding: $rt-spacing; }
+  td {
+    padding: $rt-spacing;
+
+    text-transform: capitalize;
+  }
   
   th {
     padding: $rt-spacing-half;

@@ -2,6 +2,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  titleToken: 'Growth Rates',
+
   model: function() {
     return [{
       "id": 1, 
