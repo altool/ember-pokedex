@@ -1,15 +1,13 @@
 <h3>
-  Habitats
+  Habitats!
 </h3>
 
-<ul>
 {{#each model as |habitat|}}
-  <li>
-    {{#link-to "pokemon_habitat.pokemon_habitat_id" habitat.id}}
+  {{#link-to "pokemon_habitat.pokemon_habitat_id" habitat.id}}
+    {{#paper-button primary=true class="epd-l-pokeFilter__button"}}
       {{cleanup-text habitat.name}}
-    {{/link-to}}
-  </li>
+    {{/paper-button}}
+  {{/link-to}}
 {{/each}}
-</ul>
 
 {{outlet}}

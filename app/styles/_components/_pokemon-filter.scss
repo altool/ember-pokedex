@@ -4,6 +4,15 @@
   justify-content: space-between;
 }
 
+.epd-l-pokeFilter__button {
+
+  .active & {
+    font-weight: 700;
+
+    box-shadow: container(box-shadow, 1);
+  }
+}
+
 .epd-l-pokeFilter__item {
   display: flex;
   margin: spacing(quart);

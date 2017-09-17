@@ -57,7 +57,7 @@ export default Ember.Component.extend({
 
       if ( dataItem.needs_overworld_rain ) { evo_result += 'in a rainy area '; }
 
-      if ( dataItem.relative_physical_stats ) {
+      if ( dataItem.relative_physical_stats || dataItem.relative_physical_stats === 0 ) {
         if (dataItem.relative_physical_stats == 1) {
           evo_result += 'with higher Attack than Defense ';
         } else if (dataItem.relative_physical_stats == -1) {

@@ -1,11 +1,5 @@
 <div class="flex-100">
-  <h4>
-    {{ model.name }} in the {{ model.main_region.name }} region.
-  </h4>
-</div>
-
-<div class="flex-100">
   {{pokemon-filter
-      name=model.name
+      name=title
       pokemon=model.pokemon_species}}
 </div>

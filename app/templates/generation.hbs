@@ -1,15 +1,13 @@
 <h2>
-  Generation time!
+  Generations!
 </h2>
 
-<ul>
-  {{#each model as |gen|}}
-    <li>
-      {{#link-to "generation.generation_id" gen.id}}
-        Generation {{gen.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{#each model as |gen|}}
+  {{#link-to "generation.generation_id" gen.id}}
+    {{#paper-button primary=true class="epd-l-pokeFilter__button"}}
+      Gen {{gen.name}}
+    {{/paper-button}}
+  {{/link-to}}
+{{/each}}
 
 {{outlet}}

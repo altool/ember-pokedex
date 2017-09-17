@@ -27,8 +27,12 @@
 }
 
 .epd-l-pokemon__basicAbilities {
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 
   text-transform: capitalize;
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: spacing(half);
+  }
 }
