@@ -9,14 +9,12 @@ $card-stages: (
     @include contra-color(color(#{$color}, lighter));
 
     .epd-c-evoCard__meta {
-      border-top: 1px solid color(#{$color}, dark);
+      border-top: rem(2px) solid color(#{$color}, dark);
     }
   }
 }
 
 .epd-c-evoCard__container {
-  padding: spacing(half);
-
   &:not(:last-of-type) { margin-bottom: spacing(half); }
 
   box-shadow: container(box-shadow, 1);
@@ -37,6 +35,9 @@ $card-stages: (
 
   @include hovers() { color: color(mono, darkest); }
 }
+
+.epd-c-evoCard__img,
+.epd-c-evoCard__meta { padding: spacing(half); }
 
 .epd-c-evoCard__meta {
   align-self: stretch;

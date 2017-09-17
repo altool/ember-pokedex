@@ -1,0 +1,31 @@
+$gap-spacing: spacing(third);
+
+.epd-l-evolution__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include larger-than(sm) { flex-direction: row; }
+}
+
+.epd-l-evolution__column {
+  flex: 0 1 33%;
+
+  &:not(:first-of-type) { margin: 0 0 $gap-spacing 0; }
+
+  @include larger-than(sm) {
+    &:not(:first-of-type) { margin: 0 0 0 $gap-spacing; }
+  }
+}
+
+.epd-l-evolution__arrow {
+  margin: 0 0 $gap-spacing 0;
+  flex: 0 1 spacing(double);
+
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Caret_right_font_awesome.svg/1024px-Caret_right_font_awesome.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 3rem;
+
+  @include larger-than(sm) { margin: 0 0 0 $gap-spacing; }
+}

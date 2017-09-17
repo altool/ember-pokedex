@@ -1,12 +1,17 @@
-<h5>
-  Pokedex entries!  
-</h5>
-
-<ul>
+{{#paper-list}}
   {{#each engDex_reversed as |entry|}}
-    <li>
-      {{ entry.version.name }} - {{entry.flavor_text}}
-    </li>
-    <br>
+    {{#paper-item class="md-3-line md-long-text"}}
+      <img src="/assets/images/games/{{entry.version.name}}.jpg" class="md-avatar">
+      <div class="md-list-item-text">
+        <h3>
+          <strong>
+            Pokemon {{cleanup-text entry.version.name}}
+          </strong>
+        </h3>
+        <p>
+          {{entry.flavor_text}}
+        </p>
+      </div>
+    {{/paper-item}}
   {{/each}}
-</ul>
+{{/paper-list}}
