@@ -1,5 +1,6 @@
 .epd-l-pokemon__tabs {
   display: grid;
+  margin-bottom: spacing(half);
   grid-gap: spacing(half);
   grid-template-columns: 1fr;
 

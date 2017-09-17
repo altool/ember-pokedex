@@ -1,11 +1,11 @@
-<h4>
-  Stats!  
-</h4>
-
-<ul>
 {{#each stats_reversed as |stat|}}
-  <li>
-    {{stat.stat.name}} - {{stat.base_stat}}
-  </li>
+  <h4 class="epd-statBar__name">
+    {{cleanup-text stat.name}}
+  </h4>
+
+  <div class="epd-statBar__container epd-statBar__container--{{stat.value_class}}" style="width: {{stat.value_width}}%;">
+    <span class="epd-statBar__value">
+      {{stat.value}}
+    </span>
+  </div>
 {{/each}}
-</ul>

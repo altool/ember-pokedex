@@ -1,15 +1,17 @@
 $card-stages: (
-  1: mono,
-  2: primary,
-  3: secondary
+  1: color(mono, lighter),
+  2: color(primary, lighter),
+  3: color(secondary, lighter)
 );
 
 @each $number, $color in $card-stages {
-  .epd-c-evoCard__container--stage-#{$number} {
-    @include contra-color(color(#{$color}, lighter));
+  .epd-c-evoCard__container--stage-#{$number} .epd-c-evoCard__link {
+    @include contra-color($color);
+
+    @include hovers() { @include contra-color($color); }
 
     .epd-c-evoCard__meta {
-      border-top: rem(2px) solid color(#{$color}, dark);
+      border-top: rem(1px) solid invert($color);
     }
   }
 }
@@ -30,8 +32,6 @@ $card-stages: (
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  color: color(mono, darkest);
 
   @include hovers() { color: color(mono, darkest); }
 }
