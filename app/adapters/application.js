@@ -2,7 +2,7 @@
 import DS from "ember-data";
 
 var ApplicationAdapter = DS.JSONAPIAdapter.extend({
-  host: 'http://pokeapi.co',
+  host: 'https://pokeapi.co',
   namespace: 'api/v2',
   headers: { 
    'Accept': 'application/json'
